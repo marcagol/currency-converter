@@ -19,14 +19,14 @@
 <body class="body">
     <div class="container">
         <p class="container__visibility">Pola wymagane oznaczone są *.</p>
-        <form class="js-form" action="https://postman-echo.com/get">
+        <form class="js-form form" action="https://postman-echo.com/get">
             <fieldset class="form__fieldset">
                 <legend class="form__legend">Kwota PLN do przeliczenia</legend>
                 <p>Podana kwota musi być równa lub wyższa 5 PLN i z najwyżej dwoma miejscami po przecinku.</p>
                 <p>
                     <label><span class="form__labelText">
-                            Kwota w złotówkach* </span><input class="js-plnAmount" type="number" step="0.01" min="5"
-                            name="polishCurrency" placeholder="Wpisz kwotę w PLN" required autofocus>
+                            Kwota w złotówkach* </span><input class="form__field js-amount" step="0.01" min="5"
+                            type="number" placeholder="Wpisz kwotę w PLN" required autofocus>
                     </label>
                 </p>
 
@@ -34,36 +34,19 @@
             </fieldset>
             <fieldset class="form__fieldset">
                 <legend class="form__legend">Waluta</legend>
-                <p>
-                    <select name="currency">
-                        <option type="name" class="js-firstOption">GBP</option>
-                        <option type="name" class="js-secondOption">EUR</option>
-                        <option type="name" class="js-thirdOption">CZK</option>
-                    </select>
-                </p>
-            </fieldset>
-            <fieldset class="form__fieldset">
-                <legend class="form__legend">Kurs</legend>
-                <p>Wpisz kurs sprzedaży do dwóch liczb po przecinku:</p>
-
-                <p>
-
-                    <label><span class="form__labelText">
-                            Kurs sprzedaży* </span><input class="js-sellingRate" name="sellingRate" type="number"
-                            step="0.01" required>
-                    </label>
-                </p>
-
-                <p> Kursy walut znajdziesz na stronie <a href="https://www.nbp.pl/Kursy/KursyC.html"
-                        alt="Narodowy Bank Polski">NBP</a></p>
+                <span class="form__labelText">Wybierz walutę: *</span>
+                <select class="js-currency form__field">
+                    <option value="GBP" checked>Funt brytyjski</option>
+                    <option value="EUR">Euro</option>
+                    <option value="CZK">Korona czeska</option>
+                </select>
 
             </fieldset>
+
             <p>
-                <button class="js-count">Oblicz kwotę</button>
-                <button class="js-reset" type="reset">Wyczyść formularz</button>
+                <button class="form__submit">Oblicz kwotę</button>
             </p>
-            <p>Za <strong class="js-yourPlnAmount">N/A</strong> złotych kupisz <strong class="js-amount"> N/A
-                </strong><strong class="js-yourCurrency"> N/A .</strong></p>
+            <p class="js-result form__result"></p>
         </form>
     </div>
 </body>

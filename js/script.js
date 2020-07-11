@@ -1,38 +1,36 @@
-let formElement = document.querySelector(".js-form");
-let plnElement = document.querySelector(".js-plnAmount");
-let sellingRateElement = document.querySelector(".js-sellingRate");
-let poundElement = document.querySelector(".js-firstOption");
-let euroElement = document.querySelector(".js-secondOption");
-let korunaElement = document.querySelector(".js-thirdOption");
-let yourAmountElement = document.querySelector(".js-yourPlnAmount");
-let yourResultElement = document.querySelector(".js-amount");
-let yourCurrencyElement = document.querySelector(".js-yourCurrency");
-let countElement = document.querySelector(".js-count");
-let resetElement = document.querySelector(".js-reset");
+console.log("Przeliczmy pare złotych");
 
-formElement.addEventListener("reset", () => {
-    console.log('Formularz został zresetowany');
-});
+let formElement = document.querySelector(".js-form");
+let amountElement = document.querySelector(".js-amount");
+let currencyElement = document.querySelector(".js-currency");
+let resultElement = document.querySelector(".js-result");
+
+
+let gbpRate = 4.99;
+let eurRate = 4.46;
+let czkRate = 0.17;
+
 
 formElement.addEventListener("submit", (event) => {
     event.preventDefault();
+
+    let amount = +amountElement.value;
+    let currency = currencyElement.value;
+
+    let result;
+
+    switch (currency) {
+        case "GBP":
+            result = amount / gbpRate;
+            break;
+        case "EUR":
+            result = amount / eurRate;
+            break;
+        case "CZK":
+            result = amount / czkRate;
+            break;
+    };
     
-    let pln = plnElement.value;
-    let sellingRate = sellingRateElement.value;
-
-    let result = pln / sellingRate;
-
-    yourAmountElement.innerText = pln;
-    yourResultElement.innerText = result.toFixed(2);
-
-    if (poundElement.selected) {
-        yourCurrencyElement.innerText = poundElement.value;
-    }
-    if (euroElement.selected) {
-        yourCurrencyElement.innerText = euroElement.value;
-    }
-    if (korunaElement.selected) {
-        yourCurrencyElement.innerText = korunaElement.value;
-    }
-    console.log('Formularz został wysłany');
+    resultElement.innnerHTML = `Za ${amount.toFixed(2)} PLN kupisz ${result.toFixed(2)} ${currency}`;   
+    
 });
