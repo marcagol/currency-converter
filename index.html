@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator kursu obcych walut online</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/container.css" rel="stylesheet">
+    <link href="/css/form.css" rel="stylesheet">
+    <script defer src="/js/script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="body">
+    <div class="container">
+        <p>Pola wymagane oznaczone są *.</p>
+        <form class="js-form" action="https://postman-echo.com/get">
+            <fieldset class="form__fieldset">
+                <legend class="form__legend">Kwota PLN do przeliczenia</legend>
+                <p>Podana kwota musi być równa lub wyższa 5 PLN i z najwyżej dwoma miejscami po przecinku.</p>
+                <p>
+                    <label><span class="form__labelText">
+                            Kwota w złotówkach* </span><input class="js-plnAmount" type="number" step="0.01" min="5"
+                            name="polishCurrency" placeholder="Wpisz kwotę w PLN" required autofocus>
+                    </label>
+                </p>
+
+
+            </fieldset>
+            <fieldset class="form__fieldset">
+                <legend class="form__legend">Waluta</legend>
+                <p>
+                    <select name="currency">
+                        <option type="name" class="js-firstOption">GBP</option>
+                        <option type="name" class="js-secondOption">EUR</option>
+                        <option type="name" class="js-thirdOption">CZK</option>
+                    </select>
+                </p>
+            </fieldset>
+            <fieldset class="form__fieldset">
+                <legend class="form__legend">Kurs</legend>
+                <p>Wpisz kurs sprzedaży do dwóch liczb po przecinku:</p>
+
+                <p>
+
+                    <label><span class="form__labelText">
+                            Kurs sprzedaży* </span><input class="js-sellingRate" name="sellingRate" type="number"
+                            step="0.01" required>
+                    </label>
+                </p>
+
+                <p> Kursy walut znajdziesz na stronie <a href="https://www.nbp.pl/Kursy/KursyC.html"
+                        alt="Narodowy Bank Polski">NBP</a></p>
+
+            </fieldset>
+            <p>
+                <button class="js-count">Oblicz kwotę</button>
+                <button class="js-reset" type="reset">Wyczyść formularz</button>
+            </p>
+            <p>Za <strong class="js-yourPlnAmount">N/A</strong> złotych kupisz <strong class="js-amount"> N/A
+                </strong><strong class="js-yourCurrency"> N/A .</strong></p>
+        </form>
+    </div>
+</body>
+
+</html>
