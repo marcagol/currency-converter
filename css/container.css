@@ -1,5 +1,12 @@
 .container {
-    max-width: 800px;
+    max-width: 1000px;
     padding: 10px 20px;
     margin: 0 auto;
+    background-image: url("../images/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.container__visibility {
+    font-weight: 800;
+    text-indent: 10%;
 }

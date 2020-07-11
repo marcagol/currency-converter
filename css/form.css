@@ -1,9 +1,11 @@
 .js-form {
+    background-color: whitesmoke;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 5px 5px 8px 0 #ccc;
     padding: 20px;
-    max-width: 100%;
+    max-width: 80%;
+    margin: 0 auto;
 }
 
 .form__fieldset {
