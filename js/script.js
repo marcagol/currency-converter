@@ -31,6 +31,6 @@ formElement.addEventListener("submit", (event) => {
             break;
     };
     
-    resultElement.innnerHTML = `Za ${amount.toFixed(2)} PLN kupisz ${result.toFixed(2)} ${currency}`;   
+    resultElement.innerHTML = `Za ${amount.toFixed(2)} PLN kupisz <strong>${result.toFixed(2)}</strong> ${currency}`;   
     
 });
