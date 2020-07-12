@@ -1,21 +1,25 @@
-console.log("Przeliczmy pare złotych");
+{ 
+    const welcome = () => {
+        console.log("Przeliczmy parę złotych"); 
+    }
+    
 
-let formElement = document.querySelector(".js-form");
-let amountElement = document.querySelector(".js-amount");
-let currencyElement = document.querySelector(".js-currency");
-let resultElement = document.querySelector(".js-result");
+const formElement = document.querySelector(".js-form");
+const amountElement = document.querySelector(".js-amount");
+const currencyElement = document.querySelector(".js-currency");
+const resultElement = document.querySelector(".js-result");
 
 
-let gbpRate = 4.99;
-let eurRate = 4.46;
-let czkRate = 0.17;
+const gbpRate = 4.99;
+const eurRate = 4.46;
+const czkRate = 0.17;
 
 
 formElement.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    let amount = +amountElement.value;
-    let currency = currencyElement.value;
+    const amount = +amountElement.value;
+    const currency = currencyElement.value;
 
     let result;
 
@@ -32,5 +36,6 @@ formElement.addEventListener("submit", (event) => {
     };
     
     resultElement.innerHTML = `Za ${amount.toFixed(2)} PLN kupisz <strong>${result.toFixed(2)}</strong> ${currency}`;   
-    
+    welcome();
 });
+}
